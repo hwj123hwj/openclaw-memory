@@ -11,6 +11,7 @@
 | deep-research | 企业级深度研究 | 2026-03-17 | cmcm.bot |
 | xiaohongshu-skills | 小红书自动化 | 早期 | 本地 |
 | bilibili-video-helper | B站视频搜索分析 | 早期 | 本地 |
+| DVCode (deepv-code) | AI 生图、代码生成 | 2026-03-17 | cmcm.bot |
 
 ## 已删除
 
@@ -19,16 +20,6 @@
 | bilibili-toolkit | 2026-03-15 | 整合到其他技能 |
 | variflight | 2026-03-15 | 不再使用 |
 | media-analyze | 2026-03-17 | 与 Tavily/deep-research 功能重叠 |
-
-## 配置要求
-
-### Tavily
-- 配置文件: `~/.claude/settings.json`
-- 需要 API Key: https://tavily.com
-
-### deep-research
-- 安装位置: `~/.openclaw/workspace/skills/deep-research/`
-- 依赖: Python 3, requests
 
 ---
 

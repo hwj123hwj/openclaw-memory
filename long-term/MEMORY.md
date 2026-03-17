@@ -6,6 +6,19 @@
 
 ---
 
+## 系统配置
+
+### 代理 (Clash)
+- Docker 容器：`clash-new`
+- 端口：7890 (HTTP/SOCKS5)
+- 使用命令：
+  ```bash
+  export http_proxy="http://127.0.0.1:7890"
+  export https_proxy="http://127.0.0.1:7890"
+  ```
+
+---
+
 ## 已安装技能
 
 | 技能 | 用途 | 安装日期 |
@@ -17,6 +30,7 @@
 | deep-research | 企业级深度研究，生成万字报告 | 2026-03-17 |
 | xiaohongshu-skills | 小红书自动化（发布、搜索、互动）| 早期 |
 | bilibili-video-helper | B站视频搜索分析 | 早期 |
+| DVCode (deepv-code) | AI 生图、代码生成、多模型切换 | 2026-03-17 |
 
 **已删除**：bilibili-toolkit (2026-03-15)、variflight (2026-03-15)、media-analyze (2026-03-17)
 
@@ -52,10 +66,6 @@
 ### PostgreSQL
 - 127.0.0.1:5433 / bili
 
-### API Keys
-- SiliconFlow: 已配置
-- 智谱 (Zhipu): 已配置
-
 ### Bilibili
 - UID: 1512253857 / Cookie 已保存
 
@@ -74,6 +84,14 @@
 - 安装位置：`~/.openclaw/workspace/skills/deep-research/`
 - 验证脚本：`python3 scripts/validate_report.py --report [path]`
 - 模式：quick (2-5min) / standard (5-10min) / deep (10-20min) / ultradeep (20-45min)
+
+### DVCode 技能
+- 安装：`npm i -g deepv-code`
+- 登录：`dvcode --login sk_live_xxx`
+- AI 生图：`dvcode --output-format stream-json --yolo "/nanobanana auto 1k 提示词"`
+- 代码生成：`dvcode --output-format stream-json --yolo "你的需求"`
+- Token 有效期：15 天，自动续期
+- 注意：需要配置代理才能使用
 
 ---
 
@@ -101,6 +119,7 @@ sessions_spawn({
 
 ## 更新日志
 
+- 2026-03-17: 安装 DVCode 技能，添加代理配置，整理敏感信息到 secrets.md
 - 2026-03-17: 删除 media-analyze，整理长期记忆结构，创建 GitHub 记忆仓库
 - 2026-03-16: 安装 Tavily、media-analyze 技能
 - 2026-03-15: 删除 bilibili-toolkit、variflight
