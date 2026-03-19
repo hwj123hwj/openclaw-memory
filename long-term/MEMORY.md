@@ -117,8 +117,26 @@ sessions_spawn({
 
 ---
 
+## Agent 架构
+
+| Agent | 角色 | 飞书账号 | 技能 |
+|-------|------|----------|------|
+| **main** | 编程助手 | main-account | codex-orchestrator, tavily, deep-research 等 |
+| **life-assistant** | 生活助手 | life | xiaohongshu-skills, weather, agent-reach |
+
+**飞书账号配置：**
+- `main-account`: App ID `cli_a92db4ed7a78dcca` → 绑定 main
+- `life`: App ID `cli_a92011531d385cc5` → 绑定 life-assistant
+
+**文件位置：**
+- life-assistant workspace: `/home/ubuntu/.openclaw/agents/life-assistant/workspace`
+- 全局配置: `/home/ubuntu/.openclaw/openclaw.json`
+
+---
+
 ## 更新日志
 
+- 2026-03-19: 添加 QQ 邮箱管理能力，同步配置给 life-assistant
 - 2026-03-17: 安装 DVCode 技能，添加代理配置，整理敏感信息到 secrets.md
 - 2026-03-17: 删除 media-analyze，整理长期记忆结构，创建 GitHub 记忆仓库
 - 2026-03-16: 安装 Tavily、media-analyze 技能
