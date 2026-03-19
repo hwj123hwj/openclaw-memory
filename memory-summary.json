@@ -1,0 +1,46 @@
+{
+  "summary_by_date": {
+    "2026-03-06": "B站视频文稿提取测试，遇到412反爬问题，使用 bilibili-toolkit 解决",
+    "2026-03-07": "文件清理；服务器密码修改为 123789qwe；PostgreSQL 数据库连接验证成功",
+    "2026-03-08": "飞书权限设置技能安装；OpenClaw 迁移到新服务器；Gateway 配置完成",
+    "2026-03-10": "Clash 代理配置修复（Docker 端口安全问题解决）；Git 全局代理配置完成",
+    "2026-03-12": "B站字幕提取功能测试；飞书发送文件测试；改名为'边查打字'；设置快递提醒 cron",
+    "2026-03-13": "B站 API 改用公开接口；解决飞书发送下划线链接截断问题；安装飞常准、微信公众号搜索技能",
+    "2026-03-15": "OpenClaw 升级到 2026.3.11；清理安装垃圾；删除重复的 feishu 插件",
+    "2026-03-16": "测试 NotebookLM/PinchTab 技能；安装 Tavily 技能；生活助手添加小红书技能",
+    "2026-03-17": "安装 Deep Research 技能；创建 GitHub 记忆仓库；安装 DVCode 生图技能；删除 media-analyze",
+    "2026-03-18": "记忆仓库创建和 MEMORY.md 整理",
+    "2026-03-19": "QQ 邮箱配置；邮件订阅清理"
+  },
+  "key_learnings": [
+    "代理配置：Clash Docker 容器端口 7890，必须绑定 127.0.0.1 保证安全，Git 全局代理解决 GitHub 访问问题",
+    "飞书发送：带下划线的链接直接调飞书 API 发 msg_type: text 纯文本，绕过 markdown 解析层",
+    "B站 API：大部分功能无需 Cookie（搜索、视频详情、评论），仅字幕和弹幕需要",
+    "OpenClaw Cron：必须指定 --to 参数，否则飞书推送失败",
+    "DVCode：需要代理才能使用，生图功能需要积分充值",
+    "Tavily：首选搜索方案，配置在 ~/.claude/settings.json",
+    "Codex CLI：比 acpx + ACP 协议更可靠",
+    "子 Agent：sessions_spawn 设置 runTimeoutSeconds 180-300，子 Agent 会自动报告结果",
+    "飞书视频发送：msg_type 必须是 media 不是 file，需先上传封面和视频获取 key"
+  ],
+  "important_configs": {
+    "server": "dell-server / ubuntu / 密码: 123789qwe",
+    "postgres": "127.0.0.1:5433 / database: bili / user: bili / password: bili123456",
+    "proxy": "Clash 容器 clash-new，端口 7890，仅监听 127.0.0.1",
+    "bilibili_uid": "1512253857",
+    "github_user": "hwj123hwj",
+    "feishu_main_app": "cli_a92db4ed7a78dcca（绑定 main agent）",
+    "feishu_life_app": "cli_a92011531d385cc5（绑定 life-assistant）",
+    "qq_email": "3471547530@qq.com / 授权码: uflvpzpyphwxdbbc",
+    "github_memory_repo": "https://github.com/hwj123hwj/openclaw-memory",
+    "secrets_file": "~/.openclaw/workspace/secrets.md（敏感信息，不提交 GitHub）"
+  },
+  "deprecated_info": [
+    "bilibili-toolkit（2026-03-15 删除）- 功能已整合到 bilibili-video-helper",
+    "variflight（2026-03-15 删除）- 飞常准技能已过时",
+    "media-analyze（2026-03-17 删除）- 被 deep-research 替代",
+    "agent-reach 中的小红书功能 - 现在使用 xiaohongshu-skills 独立技能",
+    "本地 feishu 扩展 - 已删除，使用内置版本",
+    "wechat-search - 已从生活助手中移除"
+  ]
+}
