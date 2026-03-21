@@ -50,6 +50,18 @@
 
 ---
 
+## 工具配置
+
+### DVCode (deepv-code)
+- **安装**: `npm i -g deepv-code`
+- **登录**: `dvcode --login sk_live_xxx`
+- **AI 生图**: `dvcode --output-format stream-json --yolo "/nanobanana auto 1k 提示词"`
+- **代码生成**: `dvcode --output-format stream-json --yolo "你的需求"`
+- **Token 有效期**: 15 天，自动续期
+- **注意**: 需要配置代理才能使用
+
+---
+
 ## 参考资料
 
 ### 子 Agent 使用
@@ -86,6 +98,7 @@ sessions_spawn({
 
 ## 更新日志
 
+- 2026-03-21: 恢复 DVCode 工具配置（非技能，但重要工具）
 - 2026-03-21: 精简长期记忆，删除动态信息（已安装技能列表、项目状态、API 详情、操作步骤）
 - 2026-03-19: 添加 QQ 邮箱管理能力，同步配置给 life-assistant
 - 2026-03-17: 安装 DVCode（全局 npm 包），添加代理配置，整理敏感信息到 secrets.md
